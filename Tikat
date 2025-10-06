@@ -1,0 +1,49 @@
+// Simple Ticket Selling Program in Java
+import java.util.Scanner;
+
+public class TicketSelling {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int totalTickets = 50; // total tickets available
+        int choice;
+
+        System.out.println("Welcome to the Ticket Booking System!");
+
+        do {
+            System.out.println("\nMenu:");
+            System.out.println("1. Show available tickets");
+            System.out.println("2. Buy tickets");
+            System.out.println("3. Exit");
+            System.out.print("Enter your choice: ");
+            choice = input.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Available tickets: " + totalTickets);
+                    break;
+
+                case 2:
+                    System.out.print("Enter number of tickets to buy: ");
+                    int ticketsToBuy = input.nextInt();
+                    if (ticketsToBuy <= totalTickets && ticketsToBuy > 0) {
+                        totalTickets -= ticketsToBuy;
+                        System.out.println("Successfully purchased " + ticketsToBuy + " ticket(s).");
+                        System.out.println("Tickets left: " + totalTickets);
+                    } else {
+                        System.out.println("Invalid number of tickets or not enough tickets available.");
+                    }
+                    break;
+
+                case 3:
+                    System.out.println("Thank you for using the Ticket Booking System!");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+            }
+        } while (choice != 3);
+
+        input.close();
+    }
+}
