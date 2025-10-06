@@ -1,0 +1,23 @@
+// Simple Multiplication Program in Java
+import java.util.Scanner;
+
+public class Multiplication {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Taking input from user
+        System.out.print("Enter first number: ");
+        int num1 = input.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = input.nextInt();
+
+        // Multiplying two numbers
+        int product = num1 * num2;
+
+        // Displaying the result
+        System.out.println("The product is: " + product);
+
+        input.close();
+    }
+}
